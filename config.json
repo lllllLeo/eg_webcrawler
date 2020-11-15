@@ -1,6 +1,47 @@
 {
   "ENGOO": {
     "ID": "",
-    "PASSWORD": ""
+    "PASSWORD": "",
+    "LOGIN": "https://engoo.co.kr/app/login?automatic=true&redirectTo=%2Fapp%2Foauth%2Fauthorize%3Fclient_id%3Dd2ac7019db25c328dc5d06b1c3c57b7ce1dcb4655d4a2a3c87b7c196875093c7%26display%3D%26intent%3Dlogin%26redirect_uri%3Dhttps%253A%252F%252Fengoo.co.kr%252Fmembers%252Fauth%252Fapp_engoo%252Fcallback%26response_type%3Dcode"
+  },
+  "BOT": {
+    "TOKEN": "",
+    "ID": ""
+  },
+  "HTML" : {
+    "ID_SELECTOR": ".css-cgadzw"
+  },
+  "TEACHER": {
+    "YUKINO": "Yukino",
+    "RENA": "Rena",
+    "ANGELICA E": "Angelica E",
+    "NOREEN GIA": "Noreen Gia",
+    "YEN": "Yen",
+    "GISELLE": "Giselle",
+    "ILMA": "Ilma",
+    "DENNY": "Denny",
+    "CHRISS": "Chriss",
+    "MIMI": "Mimi",
+    "MAYU": "Mayu",
+    "BEE JAY": "Bee Jay",
+    "FRANKY": "Franky",
+    "LEINA": "Leina",
+    "MICHELLE": "Michelle",
+    "ANDREA": "Andrea",
+    "KEIRA": "Keira",
+    "TAKA H": "Taka H",
+    "YUHO": "Yuho",
+    "KIKI": "Kiki",
+    "ASAKA": "Asaka",
+    "YUKI": "Yuki",
+    "SHINYA": "Shinya",
+    "SHIORI G": "Shiori G",
+    "MINAMI S": "Minami S",
+    "BOB": "Bob",
+    "SAYAKA": "Sayaka",
+    "KAIYOH": "Kaiyoh",
+    "TAKERU": "Takeru",
+    "SHION": "Shion"
+
   }
 }
