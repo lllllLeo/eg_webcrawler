@@ -3,3 +3,5 @@
 /workspace.xml
 .idea
 config.json
+__pycache__
+dist

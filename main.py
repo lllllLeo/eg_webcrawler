@@ -1,9 +1,18 @@
 from selenium import webdriver
 import json
 import telegram
+import sys, os, time
+
+if  getattr(sys, 'frozen', False):
+    chromedriver_path = os.path.join(sys._MEIPASS, "chromedriver.exe")
+    driver = webdriver.Chrome(chromedriver_path)
+else:
+    driver = webdriver.Chrome()
 
 with open('config.json', 'r') as f:
     config = json.load(f)
+
+
 # 선생님 이름 설정
 teacher_name = config['TEACHER']['KEIRA']
 # 텔레그램 봇 설정
@@ -15,17 +24,14 @@ eg_id = config['ENGOO']['ID']
 eg_password = config['ENGOO']['PASSWORD']
 eg_login_url = config['ENGOO']['LOGIN']
 
-id = config['HTML']['ID_SELECTOR']
+id = '.css-cgadzw'
 password = '//*[@id="label-1"]'
 signin = '.css-16clkoc'
 favorite_teacher = '#main > div.dashboard-container > aside > div.db-sidebar > ul.list-style-none.pd-none.db-sidebar-nav > li:nth-child(4) > a'
 rena = '#content > ul > li.teacher-favorite-box.teacher-card.teacher-box-39268 > a > div.teacher-card-teacher-info > p.teacher-card-teacher-name'
+
 driver = webdriver.Chrome()  # 같은 폴더 아니면 ()안에 경로 넣음
-# Leina https://engoo.co.kr/tutors/39572
-
-
-url = eg_login_url
-driver.get(url)
+driver.get(eg_login_url)
 driver.implicitly_wait(3)
 driver.find_element_by_css_selector(id).send_keys(eg_id)
 driver.find_element_by_xpath(password).send_keys(eg_password)
