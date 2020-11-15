@@ -2,6 +2,6 @@
 /shelf/
 /workspace.xml
 .idea
-ab.json
+config_.json
 __pycache__
 dist

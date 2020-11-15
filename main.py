@@ -9,7 +9,7 @@ if  getattr(sys, 'frozen', False):
 else:
     driver = webdriver.Chrome()
 
-with open('config.json', 'r') as f:
+with open('config_.json', 'r') as f:
     config = json.load(f)
 
 
