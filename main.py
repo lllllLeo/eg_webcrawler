@@ -48,7 +48,7 @@ def job():
     print("============================ " + teacher_name + " 선생님 시간표 검색중")
     driver = webdriver.Chrome()  # 같은 폴더 아니면 ()안에 경로 넣음
     driver.get(eg_login_url)
-    driver.implicitly_wait(3)
+    driver.implicitly_wait(2)
     driver.find_element_by_css_selector(id).send_keys(eg_id)
     driver.find_element_by_xpath(password).send_keys(eg_password)
     driver.find_element_by_css_selector(signin).click()
@@ -91,8 +91,8 @@ def getSchedule(driver):
     print(schedule_list)
 
 
-# schedule.every(1).minutes.do(job)
-schedule.every(45).seconds.do(job)
+schedule.every(3).minutes.do(job)
+# schedule.every(45).seconds.do(job)
 
 while True:
     schedule.run_pending()
