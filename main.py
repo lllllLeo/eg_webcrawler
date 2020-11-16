@@ -15,16 +15,16 @@ import time
 # with open('config_.json', 'r') as f:
 #     config = json.load(f)
 
-# 선생님 이름 설정
-teacher_name = config['TEACHER']['RENA']
-# 텔레그램 봇 설정
-bot_token = config['BOT']['TOKEN']
-bot_id = config['BOT']['ID']
-bot = telegram.Bot(token=bot_token)
-# 아이디, 비번 설정
-eg_id = config['ENGOO']['ID']
-eg_password = config['ENGOO']['PASSWORD']
-eg_login_url = config['ENGOO']['LOGIN']
+# # 선생님 이름 설정
+# teacher_name = config['TEACHER']['RENA']
+# # 텔레그램 봇 설정
+# bot_token = config['BOT']['TOKEN']
+# bot_id = config['BOT']['ID']
+# bot = telegram.Bot(token=bot_token)
+# # 아이디, 비번 설정
+# eg_id = config['ENGOO']['ID']
+# eg_password = config['ENGOO']['PASSWORD']
+# eg_login_url = config['ENGOO']['LOGIN']
 
 id = '.css-cgadzw'
 password = '//*[@id="label-1"]'
