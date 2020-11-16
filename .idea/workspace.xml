@@ -22,7 +22,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdc85dd8-f487-4caf-bfe8-370aacb9aa0e" name="Default Changelist" comment="" />
+    <list default="true" id="cdc85dd8-f487-4caf-bfe8-370aacb9aa0e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/COLLECT-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/PKG-00.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/PKG-00.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/PKG-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/PYZ-00.pyz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/PYZ-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/PYZ-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/warn-main.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/warn-main.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/xref-main.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/xref-main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,6 +60,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/main.py" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -91,6 +106,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1853" y="179" width="1092" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605423774609">
@@ -101,22 +117,26 @@
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state x="-1527" y="279" key="FileChooserDialogImpl/0.0.1536.834/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1605423773663" />
-    <state width="1204" height="259" key="GridCell.Tab.0.bottom" timestamp="1605439841664">
-      <screen x="-1920" y="0" width="1920" height="1050" />
+    <state width="837" height="191" key="GridCell.Tab.0.bottom" timestamp="1605526510218">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1204" height="259" key="GridCell.Tab.0.bottom/0.0.1536.834/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1605439841664" />
-    <state width="1204" height="259" key="GridCell.Tab.0.center" timestamp="1605439841664">
-      <screen x="-1920" y="0" width="1920" height="1050" />
+    <state width="1204" height="254" key="GridCell.Tab.0.bottom/0.0.1536.834/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1605448323158" />
+    <state width="837" height="191" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1605526510218" />
+    <state width="837" height="191" key="GridCell.Tab.0.center" timestamp="1605526510217">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1204" height="259" key="GridCell.Tab.0.center/0.0.1536.834/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1605439841664" />
-    <state width="1204" height="259" key="GridCell.Tab.0.left" timestamp="1605439841664">
-      <screen x="-1920" y="0" width="1920" height="1050" />
+    <state width="1204" height="254" key="GridCell.Tab.0.center/0.0.1536.834/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1605448323158" />
+    <state width="837" height="191" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1605526510217" />
+    <state width="837" height="191" key="GridCell.Tab.0.left" timestamp="1605526510217">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1204" height="259" key="GridCell.Tab.0.left/0.0.1536.834/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1605439841664" />
-    <state width="1204" height="259" key="GridCell.Tab.0.right" timestamp="1605439841664">
-      <screen x="-1920" y="0" width="1920" height="1050" />
+    <state width="1204" height="254" key="GridCell.Tab.0.left/0.0.1536.834/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1605448323158" />
+    <state width="837" height="191" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1605526510217" />
+    <state width="837" height="191" key="GridCell.Tab.0.right" timestamp="1605526510218">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1204" height="259" key="GridCell.Tab.0.right/0.0.1536.834/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1605439841664" />
+    <state width="1204" height="254" key="GridCell.Tab.0.right/0.0.1536.834/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1605448323158" />
+    <state width="837" height="191" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1605526510218" />
     <state width="1201" height="350" key="GridCell.Tab.1.bottom" timestamp="1605417453313">
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
@@ -133,13 +153,19 @@
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
     <state width="1201" height="350" key="GridCell.Tab.1.right/0.0.1536.834/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1605417453313" />
-    <state x="-64" y="-10" width="1042" height="866" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1605430554421">
+    <state x="0" y="68" key="SettingsEditor" timestamp="1605518676949">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="0" y="68" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1605518676949" />
+    <state x="591" y="42" width="1042" height="866" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1605523391424">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="-64" y="-10" width="1042" height="866" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.834/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1605430554421" />
-    <state x="-1297" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1605422964744">
-      <screen x="-1920" y="0" width="1920" height="1050" />
+    <state x="591" y="42" width="1042" height="866" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1605523391424" />
+    <state x="498" y="180" width="672" height="539" key="search.everywhere.popup" timestamp="1605523155918">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="-1297" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1536.834/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1605422964744" />
+    <state x="498" y="180" width="672" height="539" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1605523155918" />
   </component>
 </project>

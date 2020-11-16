@@ -3,18 +3,18 @@ import json
 import telegram
 import sys, os, time
 
-if  getattr(sys, 'frozen', False):
-    chromedriver_path = os.path.join(sys._MEIPASS, "chromedriver.exe")
-    driver = webdriver.Chrome(chromedriver_path)
-else:
-    driver = webdriver.Chrome()
+# exe 파일 만들 때
+# if  getattr(sys, 'frozen', False):
+#     chromedriver_path = os.path.join(sys._MEIPASS, "chromedriver.exe")
+#     driver = webdriver.Chrome(chromedriver_path)
+# else:
+#     driver = webdriver.Chrome()
 
 with open('config_.json', 'r') as f:
     config = json.load(f)
 
-
 # 선생님 이름 설정
-teacher_name = config['TEACHER']['KEIRA']
+teacher_name = config['TEACHER']['RENA']
 # 텔레그램 봇 설정
 bot_token = config['BOT']['TOKEN']
 bot_id = config['BOT']['ID']
@@ -30,6 +30,12 @@ signin = '.css-16clkoc'
 favorite_teacher = '#main > div.dashboard-container > aside > div.db-sidebar > ul.list-style-none.pd-none.db-sidebar-nav > li:nth-child(4) > a'
 rena = '#content > ul > li.teacher-favorite-box.teacher-card.teacher-box-39268 > a > div.teacher-card-teacher-info > p.teacher-card-teacher-name'
 
+# chrome_options = webdriver.ChromeOptions()
+# chrome_options.add_argument('headless')
+# chrome_options.add_argument('-disable-gpu')
+# chrome_options.add_argument('lang=ko_KR')
+
+# driver = webdriver.Chrome(chrome_options=chrome_options)  # 같은 폴더 아니면 ()안에 경로 넣음
 driver = webdriver.Chrome()  # 같은 폴더 아니면 ()안에 경로 넣음
 driver.get(eg_login_url)
 driver.implicitly_wait(3)
@@ -44,7 +50,7 @@ teacher_uid = ''
 
 def getSchedule():
     print("============================ getSchedule() 호출")
-    teacher_uid = driver.find_element_by_css_selector('#favorite-link > a').get_attribute("data-tutor-id")  # 선생님 uid 추출
+
     reservation_count = []
     reservation_count = driver.find_elements_by_css_selector('a.lessons.label.label-info')
     if len(reservation_count) is 0:
@@ -53,43 +59,28 @@ def getSchedule():
     print(teacher_name + '선생님 예약 가능한 시간 수 : %s' % len(reservation_count))
 
     i = 0
-    time_list = []
+    schedule_list = []
     for i in range(i, len(reservation_count)):
-        times = driver.find_elements_by_xpath('//a/parent::li[@id]')  # 예약하기 쪽 뽑아옴
-        time = times[i].get_attribute('id').replace("dt_", "").replace("-", "년 ", 1).replace("-", "월 ", 1).replace(
-            "_", "일 ", 1).replace("-", "시 ", 1).replace("-00", "분 ", 1)
-        time_list.append(time)
-    message = "\n".join(time_list)
-    bot.sendMessage(chat_id=bot_id, text=message)
+        schedule = reservation_count[i].find_element_by_xpath('..').find_element_by_xpath('..').find_element_by_css_selector(
+            'ul > li:nth-child(1)').get_attribute('innerHTML').replace("<br>", "")
+        time = reservation_count[i].find_element_by_xpath('..').get_attribute("id")
+        time = time[14:19].replace('-','시')
+        schedule_list.append(schedule + " " + time + "분")
+    message = "\n".join(schedule_list)
+    bot.sendMessage(chat_id=bot_id, text=teacher_name + '👨‍🏫  가능한 타임 : %s' % len(reservation_count) + '\n' + message)
     bot.sendMessage(chat_id=bot_id, text="engoo.co.kr\nengoo.co.kr\nengoo.co.kr")
-    print(time_list)
+    print(schedule_list)
 
 
-def getDate():
-    # // *[ @ id = "dt_2020-11-17_10-30-00"] / a 예약하기
-    for j in range(2, 9):
-        dates = driver.find_elements_by_xpath('//*[@id="teacher_' + teacher_uid + '"]/div[' + str(j) + ']/ul/li[1]')
-        # date_list.append(date)
-        date = dates[j].find_elements_by_xpath('//a/parent::li[@id]')
-        print(date)
-    # meme = "\n".join(date)
-    # print(meme)
-    # time = date.find_elements_by_xpath('//a/parent::li[@id]')
-    # print(date.get_attribute('innerHTML').replace("<br>",""))
-    # af = time[0].get_attribute('id').replace("dt_", "").replace("-", "년 ", 1).replace("-", "월 ", 1).replace("_", "일 ", 1).replace("-", "시 ", 1).replace("-00", "분 ", 1)
-    # print(af)
-    # // *[ @ id = "dt_2020-11-17_10-30-00"]
-    # // *[ @ id = "dt_2020-11-17_10-30-00"] / a
-    # // *[ @ id = "teacher_39572"] / div[4] / ul / li[1]
-    # //*[@id="dt_2020-11-17_10-30-00"]
-
-
+print("============================ " + teacher_name + " 선생님 시간표 검색중")
 for count in range(1, len(fav_teachers)):
     teacher = driver.find_element_by_xpath('//*[@id="content"]/ul/li[' + str(count) + ']/a/div[2]/p[1]').get_attribute(
         'innerHTML')
     if teacher == teacher_name:
         driver.find_element_by_xpath('//*[@id="content"]/ul/li[' + str(count) + ']/a/div[2]/p[1]').click()  # 선생님 클릭
         getSchedule()
+        # getDate()
+        driver.quit()
         break
 
 # print(a[i].get_attribute('id'))

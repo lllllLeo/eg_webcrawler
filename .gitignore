@@ -5,3 +5,8 @@
 config_.json
 __pycache__
 dist
+venv
+main.spec
+chromedriver.exe
+.gitignore
+.git
