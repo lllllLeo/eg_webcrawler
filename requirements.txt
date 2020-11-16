@@ -1,5 +1,4 @@
-selenium
-json
-telegram
-schedule
-time
+        selenium
+        telegram
+        schedule
+        time
