@@ -12,8 +12,8 @@ import time
 # else:
 #     driver = webdriver.Chrome()
 
-with open('config_.json', 'r') as f:
-    config = json.load(f)
+# with open('config_.json', 'r') as f:
+#     config = json.load(f)
 
 # 선생님 이름 설정
 teacher_name = config['TEACHER']['RENA']
