@@ -70,11 +70,10 @@ def getSchedule(driver):
     print("============================ getSchedule() 호출")
 
     reservation_count = []
-    last_result = []
     reservation_count = driver.find_elements_by_css_selector('a.lessons.label.label-info')
     if len(reservation_count) is 0:
         bot.sendMessage(chat_id=bot_id, text=teacher_name + '선생님의 예약 가능한 시간이 없습니다.')
-        last_result = reservation_count
+
         return
     print(teacher_name + '선생님 예약 가능한 시간 수 : %s' % len(reservation_count))
 
