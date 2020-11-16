@@ -10,3 +10,5 @@ main.spec
 chromedriver.exe
 .gitignore
 .git
+debug.log
+Leina.spec
