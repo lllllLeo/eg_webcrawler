@@ -51,6 +51,7 @@ def job():
 
     chrome_options = webdriver.ChromeOptions
     chrome_options.binary_location = GOOGLE_CHROME_BIN
+    chrome_options.add_argument('--disable-extensions')
 
     driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)  # 같은 폴더 아니면 ()안에 경로 넣음
     driver.get(eg_login_url)
