@@ -24,6 +24,7 @@ teacher_name = 'Rena'
 # 텔레그램 봇 설정
 bot_token = ''
 bot_id = ''
+bot = ''
 # bot = telegram.Bot(token=bot_token)
 # 아이디, 비번 설정
 eg_id = ''
@@ -56,13 +57,13 @@ def job():
 
     chrome_options = webdriver.ChromeOptions()
     chrome_options.binary_location = GOOGLE_CHROME_BIN
-    # chrome_options.add_argument("--headless")
-    # chrome_options.add_argument("--disable-gpu")
-    # chrome_options.add_argument("--no--sandbox")
-    # chrome_options.add_argument("--single-process")
-    # chrome_options.add_argument("--disable-dev-shm-usage")
-    # driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
-    driver = webdriver.Chrome()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--no--sandbox")
+    chrome_options.add_argument("--single-process")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
+    # driver = webdriver.Chrome()
     driver.get(eg_login_url)
     driver.implicitly_wait(2)
     driver.find_element_by_css_selector(id).send_keys(eg_id)
@@ -70,7 +71,10 @@ def job():
     driver.find_element_by_css_selector(signin).click()
     print("==================================favorite teacher 전 들어옴")
     # WebDriverWait(driver,20).until(EC.presence_of_element_located((By.CSS_SELECTOR,"#main > div.dashboard-container > aside > div.db-sidebar > ul.list-style-none.pd-none.db-sidebar-nav > li:nth-child(4) > a")))
-    driver.find_element_by_css_selector("#main > div.dashboard-container > aside > div.db-sidebar > ul.list-style-none.pd-none.db-sidebar-nav > li:nth-child(4) > a").click()
+    # driver.find_element_by_css_selector("#main > div.dashboard-container > aside > div.db-sidebar > ul.list-style-none.pd-none.db-sidebar-nav > li:nth-child(4) > a").click()
+    driver.implicitly_wait(2)
+    WebDriverWait(driver, 20).until(EC.presence_of_element_located(By.XPATH('//*[@id="main"]/div[3]/aside/div[1]/ul[3]/li[4]/a').click()))
+    # driver.find_element_by_xpath('//*[@id="main"]/div[3]/aside/div[1]/ul[3]/li[4]/a').click()
     print("제발")
     fav_teachers = []
     fav_teachers = driver.find_elements_by_tag_name('p.teacher-card-teacher-name')  # 즐겨찾는 선생님 수 카운트
