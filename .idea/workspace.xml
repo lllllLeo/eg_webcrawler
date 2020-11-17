@@ -105,9 +105,13 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="745" height="185" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1605619304360" />
-    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1605618559384">
+    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1605625546472">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1605618559384" />
+    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1605625546472" />
+    <state x="814" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1605625446532">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="814" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1605625446532" />
   </component>
 </project>
