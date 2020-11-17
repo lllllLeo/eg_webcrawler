@@ -30,7 +30,7 @@ eg_login_url = 'https://engoo.co.kr/app/login?automatic=true&redirectTo=%2Fapp%2
 id = '.css-cgadzw'
 password = '//*[@id="label-1"]'
 signin = '.css-16clkoc'
-favorite_teacher = '#main > div.dashboard-container > aside > div.db-sidebar > ul.list-style-none.pd-none.db-sidebar-nav > li:nth-child(4) > a'
+favorite_teacher = '#main>div.dashboard-container>aside>div.db-sidebar>ul.list-style-none.pd-none.db-sidebar-nav>li:nth-child(4)>a'
 
 # chrome_options = webdriver.ChromeOptions()
 # chrome_options.add_argument('headless')
