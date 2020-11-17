@@ -72,8 +72,8 @@ def job():
     print("==================================favorite teacher 전 들어옴")
     # WebDriverWait(driver,20).until(EC.presence_of_element_located((By.CSS_SELECTOR,"#main > div.dashboard-container > aside > div.db-sidebar > ul.list-style-none.pd-none.db-sidebar-nav > li:nth-child(4) > a")))
     # driver.find_element_by_css_selector("#main > div.dashboard-container > aside > div.db-sidebar > ul.list-style-none.pd-none.db0-sidebar-nav > li:nth-child(4) > a").click()
-    WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH,'//*[@id="main"]/div[3]/aside/div[1]/ul[3]/li[4]/a')).click())
-    # driver.find_element_by_xpath('//*[@id="main"]/div[3]/aside/div[1]/ul[3]/li[4]/a').click()
+    WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH,'//*[@id="main"]/div[3]/aside/div[1]/ul[3]/li[4]/a')))
+    driver.find_element_by_xpath('//*[@id="main"]/div[3]/aside/div[1]/ul[3]/li[4]/a').click()
     print("제발")
     fav_teachers = []
     fav_teachers = driver.find_elements_by_tag_name('p.teacher-card-teacher-name')  # 즐겨찾는 선생님 수 카운트
