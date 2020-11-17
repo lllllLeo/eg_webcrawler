@@ -25,7 +25,7 @@ bot = ''
 # 아이디, 비번 설정
 eg_id = ''
 eg_password = ''
-eg_login_url = ''
+eg_login_url = 'https://engoo.co.kr/app/login?automatic=true&redirectTo=%2Fapp%2Foauth%2Fauthorize%3Fclient_id%3Dd2ac7019db25c328dc5d06b1c3c57b7ce1dcb4655d4a2a3c87b7c196875093c7%26display%3D%26intent%3Dlogin%26redirect_uri%3Dhttps%253A%252F%252Fengoo.co.kr%252Fmembers%252Fauth%252Fapp_engoo%252Fcallback%26response_type%3Dcode'
 
 id = '.css-cgadzw'
 password = '//*[@id="label-1"]'
