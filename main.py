@@ -24,7 +24,7 @@ teacher_name = 'Rena'
 # 텔레그램 봇 설정
 bot_token = ''
 bot_id = ''
-bot = telegram.Bot(token=bot_token)
+# bot = telegram.Bot(token=bot_token)
 # 아이디, 비번 설정
 eg_id = ''
 eg_password = '!'
