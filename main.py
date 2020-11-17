@@ -92,8 +92,8 @@ def getSchedule(driver):
     print(schedule_list)
 
 
-schedule.every(3).minutes.do(job)
-# schedule.every(45).seconds.do(job)
+# schedule.every(3).minutes.do(job)
+schedule.every(45).seconds.do(job)
 
 while True:
     schedule.run_pending()
