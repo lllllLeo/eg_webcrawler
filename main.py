@@ -55,7 +55,8 @@ def job():
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--no--sandbox")
-    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)  # 같은 폴더 아니면 ()안에 경로 넣음
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
     driver.get(eg_login_url)
     driver.implicitly_wait(2)
     driver.find_element_by_css_selector(id).send_keys(eg_id)
