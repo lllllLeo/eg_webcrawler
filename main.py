@@ -1,4 +1,7 @@
 from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 import json
 import telegram
 import schedule
@@ -65,7 +68,7 @@ def job():
     driver.find_element_by_xpath(password).send_keys(eg_password)
     driver.find_element_by_css_selector(signin).click()
     print("==================================favorite teacher 전 들어옴")
-    driver.implicitly_wait(5)
+    WebDriverWait(driver,10).until(EC.presence_of_element_located((By.CSS_SELECTOR,"#main > div.dashboard-container > aside > div.db-sidebar > ul.list-style-none.pd-none.db-sidebar-nav > li:nth-child(4) > a")))
     driver.find_element_by_css_selector(favorite_teacher).click()
     fav_teachers = []
     fav_teachers = driver.find_elements_by_tag_name('p.teacher-card-teacher-name')  # 즐겨찾는 선생님 수 카운트
