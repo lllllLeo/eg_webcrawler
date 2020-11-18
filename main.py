@@ -7,6 +7,7 @@ import telegram
 import schedule
 import time
 import os
+
 # import sys, os, time
 
 # exe 파일 만들 때
@@ -34,7 +35,8 @@ eg_login_url = 'https://engoo.co.kr/app/login?automatic=true&redirectTo=%2Fapp%2
 id = '.css-cgadzw'
 password = '//*[@id="label-1"]'
 signin = '.css-16clkoc'
-# favorite_teacher = '#main > div.dashboard-container > aside > div.db-sidebar > ul.list-style-none.pd-none.db-sidebar-nav > li:nth-child(4) > a'
+favorite_teacher = '#main > div.dashboard-container > aside > div.db-sidebar > ul.list-style-none.pd-none.db-sidebar-nav > li:nth-child(4) > a'
+
 
 # chrome_options = webdriver.ChromeOptions()
 # chrome_options.add_argument('headless')
@@ -42,7 +44,6 @@ signin = '.css-16clkoc'
 # chrome_options.add_argument('lang=ko_KR')
 
 # driver = webdriver.Chrome(chrome_options=chrome_options)  # 같은 폴더 아니면 ()안에 경로 넣음
-
 
 
 def job():
@@ -73,8 +74,9 @@ def job():
     print("==================================favorite teacher 전 들어옴")
     # WebDriverWait(driver,20).until(EC.presence_of_element_located((By.CSS_SELECTOR,"#main > div.dashboard-container > aside > div.db-sidebar > ul.list-style-none.pd-none.db-sidebar-nav > li:nth-child(4) > a")))
     # driver.find_element_by_css_selector("#main > div.dashboard-container > aside > div.db-sidebar > ul.list-style-none.pd-none.db0-sidebar-nav > li:nth-child(4) > a").click()
-    WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH,'//*[@id="main"]/div[3]/aside/div[1]/ul[3]/li[4]/a')))
-    driver.find_element_by_xpath('//*[@id="main"]/div[3]/aside/div[1]/ul[3]/li[4]/a').click()
+    # WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH,'//*[@id="main"]/div[3]/aside/div[1]/ul[3]/li[4]/a')))
+    WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.CSS_SELECTOR, favorite_teacher)))
+    driver.find_element_by_css_selector(favorite_teacher).click()
     print("제발")
     fav_teachers = []
     fav_teachers = driver.find_elements_by_tag_name('p.teacher-card-teacher-name')  # 즐겨찾는 선생님 수 카운트
