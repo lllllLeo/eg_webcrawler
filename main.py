@@ -68,7 +68,6 @@ def job():
     driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
     # driver = webdriver.Chrome()
     driver.get(eg_login_url)
-    print(driver.get(eg_login_url))
     driver.implicitly_wait(2)
     driver.find_element_by_css_selector(id).send_keys(eg_id)
     print(eg_id)
@@ -76,7 +75,6 @@ def job():
     print(driver.find_element_by_css_selector(id))
     driver.find_element_by_xpath(password).send_keys(eg_password)
     print(driver.find_element_by_xpath(password))
-    driver.implicitly_wait(2)
     driver.find_element_by_css_selector(signin).click()
 
     print(driver.find_element_by_css_selector(signin))
@@ -86,7 +84,6 @@ def job():
     # WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH,'//*[@id="main"]/div[3]/aside/div[1]/ul[3]/li[4]/a')))
     # WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.CSS_SELECTOR, favorite_teacher)))
     driver.implicitly_wait(10)
-    print(driver.get('https://engoo.co.kr/dashboard'))
     driver.find_element_by_css_selector(favorite_teacher).click()
     print("제발~~")
     fav_teachers = []
