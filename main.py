@@ -60,6 +60,7 @@ def job():
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--no--sandbox")
+    # DevToolsActivePort file doesn't exist 에러 뜨면 밑 두개gi
     chrome_options.add_argument("--single-process")
     chrome_options.add_argument("--disable-dev-shm-usage")
     driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
