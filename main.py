@@ -71,6 +71,8 @@ def job():
     print(driver.get(eg_login_url))
     driver.implicitly_wait(2)
     driver.find_element_by_css_selector(id).send_keys(eg_id)
+    print(eg_id)
+    print(eg_password)
     print(driver.find_element_by_css_selector(id))
     driver.find_element_by_xpath(password).send_keys(eg_password)
     print(driver.find_element_by_xpath(password))
