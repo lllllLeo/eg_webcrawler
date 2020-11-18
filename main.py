@@ -77,7 +77,7 @@ def job():
     # driver.find_element_by_css_selector("#main > div.dashboard-container > aside > div.db-sidebar > ul.list-style-none.pd-none.db0-sidebar-nav > li:nth-child(4) > a").click()
     # WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH,'//*[@id="main"]/div[3]/aside/div[1]/ul[3]/li[4]/a')))
     # WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.CSS_SELECTOR, favorite_teacher)))
-    driver.implicitly_wait(50)
+    driver.implicitly_wait(40)
     driver.find_element_by_css_selector(favorite_teacher).click()
     print("제발")
     fav_teachers = []
