@@ -79,7 +79,7 @@ def job():
     # WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.CSS_SELECTOR, favorite_teacher)))
     driver.implicitly_wait(40)
     driver.find_element_by_css_selector(favorite_teacher).click()
-    print("제발")
+    print("제발~~")
     fav_teachers = []
     fav_teachers = driver.find_elements_by_tag_name('p.teacher-card-teacher-name')  # 즐겨찾는 선생님 수 카운트
     for count in range(1, len(fav_teachers)):
