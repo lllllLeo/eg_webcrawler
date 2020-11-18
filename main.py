@@ -70,6 +70,7 @@ def job():
     print(driver.find_element_by_css_selector(id))
     driver.find_element_by_xpath(password).send_keys(os.environ.get("eg_password"))
     print(driver.find_element_by_xpath(password))
+    driver.implicitly_wait(2)
     driver.find_element_by_css_selector(signin).click()
 
     print(driver.find_element_by_css_selector(signin))
@@ -100,7 +101,7 @@ def getSchedule(driver):
     reservation_count = []
     reservation_count = driver.find_elements_by_css_selector('a.lessons.label.label-info')
     if len(reservation_count) is 0:
-        bot.sendMessage(chat_id=bot_id, text=teacher_name + '선생님의 예약 가능한 시간이 없습니다.')
+        bot.sendMessage(chat_id=os.environ.get("bot_id"), text=teacher_name + '선생님의 예약 가능한 시간이 없습니다.')
 
         return
     print(teacher_name + '선생님 예약 가능한 시간 수 : %s' % len(reservation_count))
@@ -115,8 +116,8 @@ def getSchedule(driver):
         time = time[14:19].replace('-', '시')
         schedule_list.append(schedule + " " + time + "분")
     message = "\n".join(schedule_list)
-    bot.sendMessage(chat_id=bot_id, text=teacher_name + '👨‍🏫  가능한 타임 : %s' % len(reservation_count) + '\n' + message)
-    bot.sendMessage(chat_id=bot_id, text="engoo.co.kr\nengoo.co.kr\nengoo.co.kr")
+    bot.sendMessage(chat_id=os.environ.get("bot_id"), text=teacher_name + '👨‍🏫  가능한 타임 : %s' % len(reservation_count) + '\n' + message)
+    bot.sendMessage(chat_id=os.environ.get("bot_id"), text="engoo.co.kr\nengoo.co.kr\nengoo.co.kr")
     print(schedule_list)
 
 
