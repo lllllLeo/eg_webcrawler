@@ -25,7 +25,7 @@ my_teacher_list = "Rena", "Yukino", "Leina", "Mimi", "Keira", "Asaka", "Shinya",
 sched = BlockingScheduler()
 
 
-@sched.scheduled_job('cron', day_of_week='mon-sun', hour='23,0-14', minute='*/29')
+@sched.scheduled_job('cron', day_of_week='mon-sun', hour='23,0-15', minute='*/29')
 def job():
     print("================================== 크롤링 시작")
     GOOGLE_CHROME_BIN = '/app/.apt/usr/bin/google-chrome'
@@ -58,7 +58,6 @@ def job():
     teacher_message = []
     for my_teacher in my_teacher_list:
         print(my_teacher)
-        # my_teacher = my_teacher_list[count]
         for count in range(1, len(fav_teachers)):
             teacher = driver.find_element_by_xpath(
                 '//*[@id="content"]/ul/li[' + str(count) + ']/a/div[2]/p[1]').get_attribute('innerHTML')
@@ -98,7 +97,7 @@ def getSchedule(driver, teacher_message, my_teacher):
             time = time[14:19].replace('-', '시')
             schedule_list.append(schedule + ' ' + time + "분")
     make_message = "\n".join(schedule_list)
-    teacher_message.append(my_teacher + '👨‍🏫: %s' % len(reservation_count) + '\n' + make_message)
+    teacher_message.append(my_teacher + '👨‍🏫 : %s' % len(reservation_count) + '\n' + make_message)
 
 
 sched.start()
