@@ -74,7 +74,6 @@ def job():
     bot.sendMessage(chat_id=os.environ.get("bot_id"), text=result_message)
     print("============================ 종료")
 
-sched.start()
 
 def getSchedule(driver, teacher_message, my_teacher):
     print("============================ getSchedule() 호출")
@@ -102,7 +101,7 @@ def getSchedule(driver, teacher_message, my_teacher):
     teacher_message.append(my_teacher + '👨‍🏫: %s' % len(reservation_count) + '\n' + make_message)
 
 
-
+sched.start()
 
 # schedule.every(3).minutes.do(job)
 # schedule.every(45).seconds.do(job)
