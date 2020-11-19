@@ -8,20 +8,6 @@ import schedule
 import time
 import os
 
-# import sys, os, time
-
-# exe 파일 만들 때
-# if  getattr(sys, 'frozen', False):
-#     chromedriver_path = os.path.join(sys._MEIPASS, "chromedriver.exe")
-#     driver = webdriver.Chrome(chromedriver_path)
-# else:
-#     driver = webdriver.Chrome()
-
-# with open('config_.json', 'r') as f:
-#     config = json.load(f)
-
-# 선생님 이름 설정
-teacher_name = 'Rena'
 # 텔레그램 봇 설정
 bot = telegram.Bot(token=os.environ.get("bot_token"))
 # 아이디, 비번 설정
@@ -32,24 +18,16 @@ password = '//*[@id="label-1"]'
 signin = '.css-16clkoc'
 favorite_teacher = '#main > div.dashboard-container > aside > div.db-sidebar > ul.list-style-none.pd-none.db-sidebar-nav > li:nth-child(4) > a'
 
-
-# chrome_options = webdriver.ChromeOptions()
-# chrome_options.add_argument('headless')
-# chrome_options.add_argument('-disable-gpu')
-# chrome_options.add_argument('lang=ko_KR')
-
-# driver = webdriver.Chrome(chrome_options=chrome_options)  # 같은 폴더 아니면 ()안에 경로 넣음
-
-
+my_teacher_list = []
+my_teacher_list = "Rena", "Yukino", "Leina", "Mimi", "Keira", "Asaka", "Shinya", "Sayaka", "Yen", "Giselle", "Ilma", "Denny", "Chriss", "Bee Jay", "Franky", "Michelle", "Andrea"
 def job():
-    print("==================================job() 들어옴")
+    print("================================== 크롤링 시작")
     GOOGLE_CHROME_BIN = '/app/.apt/usr/bin/google-chrome'
     CHROMEDRIVER_PATH = '/app/.chromedriver/bin/chromedriver'
     now = time.localtime()
     current = "%04d-%02d-%02d %02d:%02d:%02d" % (
         now.tm_year, now.tm_mon, now.tm_mday, now.tm_hour, now.tm_min, now.tm_sec)
     print("현재 시간 = ", str(current))
-    print("============================ " + teacher_name + " 선생님 시간표 검색중")
 
     chrome_options = webdriver.ChromeOptions()
     chrome_options.binary_location = GOOGLE_CHROME_BIN
@@ -66,49 +44,55 @@ def job():
     driver.implicitly_wait(2)
     driver.find_element_by_css_selector(id).send_keys(os.environ.get("eg_id"))
     driver.find_element_by_xpath(password).send_keys(os.environ.get("eg_password"))
-    driver.implicitly_wait(2)
     driver.find_element_by_css_selector(signin).click()
-
-    print("==================================favorite teacher 전 들어옴")
     driver.find_element_by_css_selector(favorite_teacher).click()
+
+
     fav_teachers = []
     fav_teachers = driver.find_elements_by_tag_name('p.teacher-card-teacher-name')  # 즐겨찾는 선생님 수 카운트
-    for count in range(1, len(fav_teachers)):
-        teacher = driver.find_element_by_xpath(
-            '//*[@id="content"]/ul/li[' + str(count) + ']/a/div[2]/p[1]').get_attribute(
-            'innerHTML')
-        if teacher == teacher_name:
-            driver.find_element_by_xpath('//*[@id="content"]/ul/li[' + str(count) + ']/a/div[2]/p[1]').click()  # 선생님 클릭
-            getSchedule(driver)
-            driver.quit()
-            break
+    teacher_message = []
+    for my_teacher in my_teacher_list:
+        print(my_teacher)
+        # my_teacher = my_teacher_list[count]
+        for count in range(1, len(fav_teachers)):
+            teacher = driver.find_element_by_xpath(
+                '//*[@id="content"]/ul/li[' + str(count) + ']/a/div[2]/p[1]').get_attribute('innerHTML')
+            if my_teacher == teacher:
+                driver.find_element_by_xpath(
+                    '//*[@id="content"]/ul/li[' + str(count) + ']/a').click()  # 선생님 클릭
+                getSchedule(driver, teacher_message, my_teacher)
+                driver.back()
+                print(teacher_message)
 
+    # for message in teacher_message:
+    driver.quit()
+    result_message = "\n".join(teacher_message)
+    bot.sendMessage(chat_id=os.environ.get("bot_id"), text=result_message)
 
-def getSchedule(driver):
+def getSchedule(driver, teacher_message, my_teacher):
     print("============================ getSchedule() 호출")
 
     reservation_count = []
     reservation_count = driver.find_elements_by_css_selector('a.lessons.label.label-info')
     if len(reservation_count) is 0:
-        bot.sendMessage(chat_id=os.environ.get("bot_id"), text=teacher_name + '선생님의 예약 가능한 시간이 없습니다.')
-
+        teacher_message.append(my_teacher + ': X')
         return
-    print(teacher_name + '선생님 예약 가능한 시간 수 : %s' % len(reservation_count))
+    print(my_teacher + '선생님 예약 가능한 시간 수 : %s' % len(reservation_count))
 
-    i = 0
     schedule_list = []
-    for i in range(i, len(reservation_count)):
-        schedule = reservation_count[i].find_element_by_xpath('..').find_element_by_xpath(
-            '..').find_element_by_css_selector(
-            'ul > li:nth-child(1)').get_attribute('innerHTML').replace("<br>", "")
-        time = reservation_count[i].find_element_by_xpath('..').get_attribute("id")
-        time = time[14:19].replace('-', '시')
-        schedule_list.append(schedule + " " + time + "분")
-    message = "\n".join(schedule_list)
-    bot.sendMessage(chat_id=os.environ.get("bot_id"), text=teacher_name + '👨‍🏫  가능한 타임 : %s' % len(reservation_count) + '\n' + message)
-    bot.sendMessage(chat_id=os.environ.get("bot_id"), text="engoo.co.kr\nengoo.co.kr\nengoo.co.kr")
-    print(schedule_list)
-
+    for j in range(0, len(reservation_count)):
+        if len(reservation_count) > 59:
+            schedule_list.append('예약 가능 시간 많음 (60개 이상)')
+            break
+        else:
+            schedule = reservation_count[j].find_element_by_xpath('..').find_element_by_xpath(
+                '..').find_element_by_css_selector(
+                'ul > li:nth-child(1)').get_attribute('innerHTML').replace("<br>", "")
+            time = reservation_count[j].find_element_by_xpath('..').get_attribute("id")
+            time = time[14:19].replace('-', '시')
+            schedule_list.append(schedule + ' ' + time + "분")
+    make_message = "\n".join(schedule_list)
+    teacher_message.append(my_teacher + '👨‍🏫: %s' % len(reservation_count) + '\n' + make_message)
 
 # schedule.every(3).minutes.do(job)
 schedule.every(45).seconds.do(job)

@@ -82,7 +82,6 @@ def job():
     driver.find_element_by_css_selector(favorite_teacher).click()
     fav_teachers = []
     fav_teachers = driver.find_elements_by_tag_name('p.teacher-card-teacher-name')  # 즐겨찾는 선생님 수 카운트
-    teacher_message = []
     # for count in range(1, len(fav_teachers)):
     #     print(count)
     #     teacher = driver.find_element_by_xpath(
@@ -94,6 +93,7 @@ def job():
     #             getSchedule(driver, teacher_message, i)
     #             driver.back()
     #             print(teacher_message)
+    teacher_message = []
     print("fav_teacher는  ")
     print(len(fav_teachers))
     for my_teacher in my_teacher_list:
@@ -125,7 +125,6 @@ def getSchedule(driver, teacher_message, my_teacher):
     print(my_teacher + '선생님 예약 가능한 시간 수 : %s' % len(reservation_count))
 
     schedule_list = []
-    results = []
     for j in range(0, len(reservation_count)):
         if len(reservation_count) > 59:
             schedule_list.append('예약 가능 시간 많음 (60개 이상)')

@@ -22,6 +22,7 @@
     <list default="true" id="91163aad-ad14-444e-a312-b241f516ac7a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +53,27 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/main.py" />
   </component>
   <component name="RunManager" selected="Python.engoo_dev">
+    <configuration name="ㅅㄷ" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="eg_webcrawler" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ㅅㄷ.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="engoo_dev" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="eg_webcrawler" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -97,6 +119,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.engoo_dev" />
+        <item itemvalue="Python.ㅅㄷ" />
       </list>
     </recent_temporary>
   </component>
@@ -140,38 +163,55 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="772" y="209" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1605617750574" />
-    <state width="1515" height="213" key="GridCell.Tab.0.bottom" timestamp="1605713620187">
+    <state width="1515" height="213" key="GridCell.Tab.0.bottom" timestamp="1605770543868">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="938" height="287" key="GridCell.Tab.0.bottom/0.0.1536.834/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1605690908854" />
-    <state width="1515" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1605713620187" />
+    <state width="1515" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1605770543868" />
     <state width="745" height="185" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1605661744870" />
-    <state width="1515" height="213" key="GridCell.Tab.0.center" timestamp="1605713620187">
+    <state width="1515" height="213" key="GridCell.Tab.0.center" timestamp="1605770543868">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="938" height="287" key="GridCell.Tab.0.center/0.0.1536.834/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1605690908854" />
-    <state width="1515" height="213" key="GridCell.Tab.0.center/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1605713620187" />
+    <state width="1515" height="213" key="GridCell.Tab.0.center/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1605770543868" />
     <state width="745" height="185" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1605661744869" />
-    <state width="1515" height="213" key="GridCell.Tab.0.left" timestamp="1605713620187">
+    <state width="1515" height="213" key="GridCell.Tab.0.left" timestamp="1605770543867">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="938" height="287" key="GridCell.Tab.0.left/0.0.1536.834/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1605690908853" />
-    <state width="1515" height="213" key="GridCell.Tab.0.left/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1605713620187" />
+    <state width="1515" height="213" key="GridCell.Tab.0.left/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1605770543867" />
     <state width="745" height="185" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1605661744869" />
-    <state width="1515" height="213" key="GridCell.Tab.0.right" timestamp="1605713620187">
+    <state width="1515" height="213" key="GridCell.Tab.0.right" timestamp="1605770543868">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="938" height="287" key="GridCell.Tab.0.right/0.0.1536.834/-1920.0.1920.1050@-1920.0.1920.1050" timestamp="1605690908854" />
-    <state width="1515" height="213" key="GridCell.Tab.0.right/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1605713620187" />
+    <state width="1515" height="213" key="GridCell.Tab.0.right/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1605770543868" />
     <state width="745" height="185" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1605661744870" />
-    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1605713540918">
+    <state width="1515" height="265" key="GridCell.Tab.1.bottom" timestamp="1605766903385">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1605713540918" />
+    <state width="1515" height="265" key="GridCell.Tab.1.bottom/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1605766903385" />
+    <state width="1515" height="265" key="GridCell.Tab.1.center" timestamp="1605766903385">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1515" height="265" key="GridCell.Tab.1.center/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1605766903385" />
+    <state width="1515" height="265" key="GridCell.Tab.1.left" timestamp="1605766903385">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1515" height="265" key="GridCell.Tab.1.left/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1605766903385" />
+    <state width="1515" height="265" key="GridCell.Tab.1.right" timestamp="1605766903385">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1515" height="265" key="GridCell.Tab.1.right/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1605766903385" />
+    <state x="-1397" y="192" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1605770544479">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-1397" y="192" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1605770544479" />
     <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1605633245282" />
-    <state x="814" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1605625446532">
+    <state x="814" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1605766611454">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
+    <state x="814" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1605766611454" />
     <state x="814" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1605625446532" />
   </component>
 </project>
