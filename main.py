@@ -100,9 +100,4 @@ def getSchedule(driver, teacher_message, my_teacher):
     teacher_message.append(my_teacher + '👨‍🏫: %s' % len(reservation_count) + '\n' + make_message)
 
 
-# schedule.every(3).minutes.do(job)
-schedule.every(45).seconds.do(job)
-
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+sched.start()
