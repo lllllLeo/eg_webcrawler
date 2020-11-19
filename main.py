@@ -1,4 +1,5 @@
 from selenium import webdriver
+from apscheduler.schedulers.blocking import BlockingScheduler
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -20,6 +21,11 @@ favorite_teacher = '#main > div.dashboard-container > aside > div.db-sidebar > u
 
 my_teacher_list = []
 my_teacher_list = "Rena", "Yukino", "Leina", "Mimi", "Keira", "Asaka", "Shinya", "Sayaka", "Yen", "Giselle", "Ilma", "Denny", "Chriss", "Bee Jay", "Franky", "Michelle", "Andrea"
+
+sched = BlockingScheduler()
+
+
+@sched.scheduled_job('cron', day_of_week='mon-sun', hour='23,0-14', minute='*/29')
 def job():
     print("================================== 크롤링 시작")
     GOOGLE_CHROME_BIN = '/app/.apt/usr/bin/google-chrome'
@@ -47,7 +53,6 @@ def job():
     driver.find_element_by_css_selector(signin).click()
     driver.find_element_by_css_selector(favorite_teacher).click()
 
-
     fav_teachers = []
     fav_teachers = driver.find_elements_by_tag_name('p.teacher-card-teacher-name')  # 즐겨찾는 선생님 수 카운트
     teacher_message = []
@@ -62,12 +67,12 @@ def job():
                     '//*[@id="content"]/ul/li[' + str(count) + ']/a').click()  # 선생님 클릭
                 getSchedule(driver, teacher_message, my_teacher)
                 driver.back()
-                print(teacher_message)
 
     # for message in teacher_message:
     driver.quit()
     result_message = "\n".join(teacher_message)
     bot.sendMessage(chat_id=os.environ.get("bot_id"), text=result_message)
+
 
 def getSchedule(driver, teacher_message, my_teacher):
     print("============================ getSchedule() 호출")
@@ -93,6 +98,7 @@ def getSchedule(driver, teacher_message, my_teacher):
             schedule_list.append(schedule + ' ' + time + "분")
     make_message = "\n".join(schedule_list)
     teacher_message.append(my_teacher + '👨‍🏫: %s' % len(reservation_count) + '\n' + make_message)
+
 
 # schedule.every(3).minutes.do(job)
 schedule.every(45).seconds.do(job)

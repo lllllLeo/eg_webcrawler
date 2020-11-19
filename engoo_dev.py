@@ -1,4 +1,5 @@
 from selenium import webdriver
+from apscheduler.schedulers.blocking import BlockingScheduler
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -6,6 +7,8 @@ import json
 import telegram
 import schedule
 import time
+from apscheduler.triggers.cron import CronTrigger
+from apscheduler.triggers.combining import OrTrigger
 import sys
 import os
 
@@ -52,6 +55,12 @@ my_teacher_list = []
 # 프리미엄[7]
 my_teacher_list = "Rena", "Yukino", "Leina", "Mimi", "Keira", "Asaka", "Shinya", "Sayaka", "Yen", "Giselle", "Ilma", "Denny", "Chriss", "Bee Jay", "Franky", "Michelle", "Andrea"
 
+sched = BlockingScheduler()
+
+
+# sched.add_job(job, 'cron', day_of_week='0-6', hour='23,0-14', minute='*/30')
+# @sched.scheduled_job('cron', day_of_week='0-6', hour='23,0-14', minute='*/30')
+@sched.scheduled_job('cron', day_of_week='mon-sun', hour='17', minute='*/1')
 def job():
     print("==================================job() 들어옴")
     # GOOGLE_CHROME_BIN = '/app/.apt/usr/bin/google-chrome'
@@ -100,7 +109,8 @@ def job():
         print(my_teacher)
         # my_teacher = my_teacher_list[count]
         for count in range(1, len(fav_teachers)):
-            teacher = driver.find_element_by_xpath('//*[@id="content"]/ul/li[' + str(count) + ']/a/div[2]/p[1]').get_attribute('innerHTML')
+            teacher = driver.find_element_by_xpath(
+                '//*[@id="content"]/ul/li[' + str(count) + ']/a/div[2]/p[1]').get_attribute('innerHTML')
             print(count)
             if my_teacher == teacher:
                 driver.find_element_by_xpath(
@@ -139,9 +149,17 @@ def getSchedule(driver, teacher_message, my_teacher):
     make_message = "\n".join(schedule_list)
     teacher_message.append(my_teacher + '👨‍🏫: %s' % len(reservation_count) + '\n' + make_message)
 
-# schedule.every(3).minutes.do(job)
-schedule.every(45).seconds.do(job)
 
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+# @sched.scheduled_job('cron',day_of_week='sun-sat', hour='23,0-14',timezone='America/Chicago')
+# def cron_job():
+#     sched.add_job(run, "interval", minute='*/30')
+# sched.add_job(job, 'cron', day_of_week='mon-sun', hour='17,00', minute='*/1')
+# sched.add_job(job, 'cron', day_of_week='0-6', hour='23,0-14', minute='*/1')
+# schedule.every(3).minutes.do(job)
+# schedule.every(45).seconds.do(job)
+
+sched.start()
+
+# while True:
+#     schedule.run_pending()
+#     time.sleep(1)
