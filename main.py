@@ -22,10 +22,10 @@ favorite_teacher = '#main > div.dashboard-container > aside > div.db-sidebar > u
 my_teacher_list = []
 my_teacher_list = "Rena", "Yukino", "Leina", "Mimi", "Keira", "Asaka", "Shinya", "Sayaka", "Yen", "Giselle", "Ilma", "Denny", "Chriss", "Bee Jay", "Franky", "Michelle", "Andrea"
 
-# sched = BlockingScheduler()
-#
-#
-# @sched.scheduled_job('cron', day_of_week='mon-sun', hour='23,0-14', minute='*/29')
+sched = BlockingScheduler()
+
+
+@sched.scheduled_job('cron', day_of_week='mon-sun', hour='23,0-14', minute='*/29')
 def job():
     print("================================== 크롤링 시작")
     GOOGLE_CHROME_BIN = '/app/.apt/usr/bin/google-chrome'
@@ -72,7 +72,9 @@ def job():
     driver.quit()
     result_message = "\n".join(teacher_message)
     bot.sendMessage(chat_id=os.environ.get("bot_id"), text=result_message)
+    print("============================ 종료")
 
+sched.start()
 
 def getSchedule(driver, teacher_message, my_teacher):
     print("============================ getSchedule() 호출")
@@ -100,9 +102,11 @@ def getSchedule(driver, teacher_message, my_teacher):
     teacher_message.append(my_teacher + '👨‍🏫: %s' % len(reservation_count) + '\n' + make_message)
 
 
-# schedule.every(3).minutes.do(job)
-schedule.every(45).seconds.do(job)
 
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+
+# schedule.every(3).minutes.do(job)
+# schedule.every(45).seconds.do(job)
+
+# while True:
+#     schedule.run_pending()
+#     time.sleep(1)
